@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Register</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="register.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="register-box">
+            <header>
+                <h1>StudentHub</h1>
+                <p>Create Your Account</p>
+            </header>
+
+            <form id="registerForm" novalidate>
+                <div class="input-box">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your full name" required>
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <small class="error" id="emailError"></small>
+                </div>
+
+                <div class="input-box">
+                    <label for="mobile">Mobile Number</label>
+                    <input type="tel" id="mobile" placeholder="Enter 10-digit mobile number" required>
+                    <small class="error" id="mobileError"></small>
+                </div>
+
+                <div class="input-box">
+                    <label for="course">Course</label>
+                    <select id="course" required>
+                        <option value="">Select your course</option>
+                        <option>B.Tech Computer Science</option>
+                        <option>B.Tech Mechanical</option>
+                        <option>B.Tech Electrical</option>
+                        <option>B.Tech Civil</option>
+                        <option>BCA</option>
+                        <option>BBA</option>
+                        <option>Other</option>
+                    </select>
+                    <small class="error" id="courseError"></small>
+                </div>
+
+                <div class="input-box">
+                    <label for="year">Year of Study</label>
+                    <select id="year" required>
+                        <option value="">Select your year</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                    </select>
+                    <small class="error" id="yearError"></small>
+                </div>
+
+                <fieldset class="gender-box">
+                    <legend>Gender</legend>
+                    <label class="radio-label"><input type="radio" name="gender" value="Female"> Female</label>
+                    <label class="radio-label"><input type="radio" name="gender" value="Male"> Male</label>
+                    <label class="radio-label"><input type="radio" name="gender" value="Other"> Other</label>
+                    <small class="error" id="genderError"></small>
+                </fieldset>
+
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Create password" required>
+                    <small class="hint">Use 8+ characters with uppercase, lowercase, a number and a special character.</small>
+                    <small class="error" id="passwordError"></small>
+                </div>
+
+                <div class="input-box">
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" id="confirm" placeholder="Confirm password" required>
+                    <small class="error" id="confirmError"></small>
+                </div>
+
+                <div class="terms-box">
+                    <label class="terms-label">
+                        <input type="checkbox" id="terms">
+                        I accept the terms and conditions.
+                    </label>
+                    <small class="error" id="termsError"></small>
+                </div>
+
+                <button type="submit">Register</button>
+                <p id="successMessage" role="status"></p>
+            </form>
+
+            <footer>
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>

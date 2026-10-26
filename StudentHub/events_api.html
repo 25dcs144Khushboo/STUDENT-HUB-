@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StudentHub Events API</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fc;
+            color: #263445;
+            margin: 0;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .panel, .event {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #00000010;
+        }
+
+        input, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 6px 0 14px;
+            border: 1px solid #ccd5e0;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #24527a;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        .delete {
+            background: #c0392b;
+        }
+
+        .cancel {
+            background: #64748b;
+        }
+
+        #status {
+            overflow-wrap: anywhere;
+        }
+
+        .event h3 {
+            color: #24527a;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>StudentHub - Event Management</h1>
+
+    <div class="panel">
+        <h2 id="formTitle">Add Event</h2>
+
+        <form id="eventForm">
+            <input type="hidden" id="event_id">
+
+            <label for="title">Event Title *</label>
+            <input id="title" required>
+
+            <label for="event_date">Event Date *</label>
+            <input type="date" id="event_date" required>
+
+            <label for="event_time">Event Time *</label>
+            <input type="time" id="event_time" required>
+
+            <label for="venue">Venue *</label>
+            <input id="venue" required>
+
+            <label for="category">Category *</label>
+            <input id="category" required>
+
+            <label for="description">Description</label>
+            <textarea id="description"></textarea>
+
+            <button type="submit" id="saveButton">Add Event</button>
+            <button type="button" id="cancelButton" class="cancel" hidden>
+                Cancel Edit
+            </button>
+        </form>
+
+        <p id="status" role="status"></p>
+    </div>
+
+    <div class="panel">
+        <h2>Event List</h2>
+        <button type="button" id="refreshButton">Refresh List</button>
+        <div id="eventList">Loading events...</div>
+    </div>
+</div>
+
+<script>
+const API = "api/events.php";
+const form = document.getElementById("eventForm");
+const statusBox = document.getElementById("status");
+const eventList = document.getElementById("eventList");
+const cancelButton = document.getElementById("cancelButton");
+
+async function requestAPI(method, body = null) {
+    const options = {
+        method,
+        credentials: "same-origin",
+        headers: { "Accept": "application/json" }
+    };
+
+    if (body !== null) {
+        options.headers["Content-Type"] = "application/json";
+        options.body = JSON.stringify(body);
+    }
+
+    let response;
+
+    try {
+        response = await fetch(API, options);
+    } catch (error) {
+        throw new Error(
+            "Cannot connect to the API. Check the URL and make sure XAMPP Apache is running."
+        );
+    }
+
+    const text = await response.text();
+    let result;
+
+    try {
+        result = JSON.parse(text);
+    } catch (error) {
+        console.error("API response:", text);
+        throw new Error(
+            "The API did not return JSON. Check the PHP file or login redirect."
+        );
+    }
+
+    if (!response.ok || !result.success) {
+        throw new Error(result.message || "API request failed.");
+    }
+
+    return result;
+}
+
+function showStatus(message, isError = false) {
+    statusBox.textContent = message;
+    statusBox.style.color = isError ? "#c0392b" : "#176534";
+}
+
+async function loadEvents() {
+    eventList.textContent = "Loading events...";
+
+    try {
+        const result = await requestAPI("GET");
+        eventList.replaceChildren();
+
+        if (!Array.isArray(result.data) || result.data.length === 0) {
+            eventList.textContent = "No events found.";
+            return;
+        }
+
+        result.data.forEach(event => {
+            const card = document.createElement("div");
+            card.className = "event";
+
+            const title = document.createElement("h3");
+            title.textContent = event.title;
+
+            const details = document.createElement("p");
+            details.textContent =
+                "Date: " + event.event_date +
+                " | Time: " + event.event_time +
+                " | Venue: " + event.venue +
+                " | Category: " + event.category;
+
+            const description = document.createElement("p");
+            description.textContent = event.description || "";
+
+            const editButton = document.createElement("button");
+            editButton.textContent = "Edit";
+            editButton.addEventListener("click", () => editEvent(event));
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "delete";
+            deleteButton.addEventListener("click", () =>
+                deleteEvent(event.event_id)
+            );
+
+            card.append(title, details, description, editButton, deleteButton);
+            eventList.appendChild(card);
+        });
+    } catch (error) {
+        eventList.textContent = "Could not load events.";
+        showStatus(error.message, true);
+    }
+}
+
+function editEvent(event) {
+    document.getElementById("event_id").value = event.event_id;
+    document.getElementById("title").value = event.title;
+    document.getElementById("event_date").value = event.event_date;
+    document.getElementById("event_time").value =
+        String(event.event_time).substring(0, 5);
+    document.getElementById("venue").value = event.venue;
+    document.getElementById("category").value = event.category;
+    document.getElementById("description").value = event.description || "";
+
+    document.getElementById("formTitle").textContent = "Update Event";
+    document.getElementById("saveButton").textContent = "Update Event";
+    cancelButton.hidden = false;
+
+    form.scrollIntoView({ behavior: "smooth" });
+}
+
+function resetForm() {
+    form.reset();
+    document.getElementById("event_id").value = "";
+    document.getElementById("formTitle").textContent = "Add Event";
+    document.getElementById("saveButton").textContent = "Add Event";
+    cancelButton.hidden = true;
+}
+
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const id = document.getElementById("event_id").value;
+
+    const data = {
+        action: id ? "update" : "add",
+        title: document.getElementById("title").value.trim(),
+        event_date: document.getElementById("event_date").value,
+        event_time: document.getElementById("event_time").value,
+        venue: document.getElementById("venue").value.trim(),
+        category: document.getElementById("category").value.trim(),
+        description: document.getElementById("description").value.trim()
+    };
+
+    if (id) data.event_id = Number(id);
+
+    try {
+        const result = await requestAPI("POST", data);
+        showStatus(result.message);
+        resetForm();
+        await loadEvents();
+    } catch (error) {
+        showStatus(error.message, true);
+    }
+});
+
+async function deleteEvent(id) {
+    if (!confirm("Delete this event?")) return;
+
+    try {
+        const result = await requestAPI("POST", {
+            action: "delete",
+            event_id: Number(id)
+        });
+
+        showStatus(result.message);
+        await loadEvents();
+    } catch (error) {
+        showStatus(error.message, true);
+    }
+}
+
+cancelButton.addEventListener("click", resetForm);
+document.getElementById("refreshButton").addEventListener("click", loadEvents);
+
+loadEvents();
+</script>
+</body>
+</html>

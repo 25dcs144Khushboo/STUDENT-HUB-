@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Coding Competition",
+        "date": "2026-09-12",
+        "time": "10:00 AM",
+        "venue": "Computer Lab",
+        "category": "Technical",
+        "description": "Test your programming skills and compete with students from different departments."
+    },
+    {
+        "id": 2,
+        "title": "AI Workshop",
+        "date": "2026-09-18",
+        "time": "11:00 AM",
+        "venue": "Seminar Hall",
+        "category": "Technical",
+        "description": "Learn Artificial Intelligence, Machine Learning, and Generative AI from industry experts."
+    },
+    {
+        "id": 3,
+        "title": "Sports Meet",
+        "date": "2026-09-28",
+        "time": "9:00 AM",
+        "venue": "College Ground",
+        "category": "Sports",
+        "description": "Participate in football, cricket, volleyball, badminton and athletics."
+    },
+    {
+        "id": 4,
+        "title": "Cultural Fest",
+        "date": "2026-10-05",
+        "time": "4:00 PM",
+        "venue": "Auditorium",
+        "category": "Cultural",
+        "description": "Showcase your talent in dance, music, drama and fashion show."
+    },
+    {
+        "id": 5,
+        "title": "Robotics Workshop",
+        "date": "2026-10-10",
+        "time": "10:30 AM",
+        "venue": "Robotics Lab",
+        "category": "Technical",
+        "description": "Learn the basics of robotics, sensors and autonomous systems."
+    },
+    {
+        "id": 6,
+        "title": "Cricket Tournament",
+        "date": "2026-10-15",
+        "time": "8:00 AM",
+        "venue": "College Ground",
+        "category": "Sports",
+        "description": "Inter-department cricket tournament for college students."
+    },
+    {
+        "id": 7,
+        "title": "Dance Competition",
+        "date": "2026-10-20",
+        "time": "5:00 PM",
+        "venue": "Auditorium",
+        "category": "Cultural",
+        "description": "Participate in solo and group dance competitions."
+    },
+    {
+        "id": 8,
+        "title": "Web Development Seminar",
+        "date": "2026-10-25",
+        "time": "12:00 PM",
+        "venue": "Seminar Hall",
+        "category": "Technical",
+        "description": "Learn modern HTML, CSS, JavaScript and web development techniques."
+    }
+]

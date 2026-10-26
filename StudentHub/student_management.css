@@ -1,0 +1,158 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+    color: #263445;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.header {
+    background: #93b6da;
+    padding: 22px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+.card {
+    background: white;
+    padding: 22px;
+    margin-top: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.actions, .filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 15px 0;
+}
+
+input, select {
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    max-width: 100%;
+}
+
+form .field {
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.field input, .field select {
+    width: 100%;
+}
+
+button, .btn {
+    display: inline-block;
+    border: none;
+    background: #315f8c;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-secondary {
+    background: #64748b;
+}
+
+.btn-danger {
+    background: #b42318;
+}
+
+.btn-light {
+    background: white;
+    color: #263445;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 6px;
+    margin: 15px 0;
+}
+
+.success {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.error {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+    background: #e6f0ff;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.inline-form button {
+    margin: 2px;
+}
+
+.role {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    background: #e6f0ff;
+    text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 14px;
+    }
+}
