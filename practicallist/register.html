@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <main>
+        <section class="register-box">
+            <header>
+                <h1>StudentHub</h1>
+                <p>Create Your Account</p>
+            </header>
+
+            <form action="register.php" method="POST">
+                <div class="input-box">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name"
+                           placeholder="Enter your full name"
+                           maxlength="100" autocomplete="name" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username"
+                           placeholder="Choose a username"
+                           minlength="3" maxlength="30"
+                           pattern="[A-Za-z0-9_]{3,30}"
+                           title="Use 3–30 letters, numbers or underscores"
+                           autocomplete="username" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email"
+                           placeholder="Enter your email"
+                           maxlength="254" autocomplete="email" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="course">Course</label>
+                    <input type="text" id="course" name="course"
+                           placeholder="Enter your course"
+                           maxlength="100" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"
+                           placeholder="Create password"
+                           minlength="8" maxlength="72"
+                           autocomplete="new-password" required>
+                    <small>Use at least 8 characters.</small>
+                </div>
+
+                <div class="input-box">
+                    <label for="confirm">Confirm Password</label>
+                    <input type="password" id="confirm" name="confirm"
+                           placeholder="Confirm password"
+                           minlength="8" maxlength="72"
+                           autocomplete="new-password" required>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <footer>
+                <p>Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+            </footer>
+        </section>
+    </main>
+
+    <script>
+        const form = document.querySelector("form");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm");
+
+        function checkPasswords() {
+            confirmPassword.setCustomValidity(
+                password.value === confirmPassword.value
+                    ? ""
+                    : "Passwords do not match."
+            );
+        }
+
+        password.addEventListener("input", checkPasswords);
+        confirmPassword.addEventListener("input", checkPasswords);
+
+        form.addEventListener("submit", checkPasswords);
+    </script>
+</body>
+</html>

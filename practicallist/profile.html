@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <div id="notification" class="notification">
+        Welcome to your StudentHub Profile!
+        <button onclick="closeNotification()">×</button>
+    </div>
+
+    <header>
+
+        <h1>StudentHub</h1>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <nav id="navMenu">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+
+    </header>
+
+    <main>
+
+        <section class="slider">
+
+            <div class="slide active">
+                <img src="https://via.placeholder.com/900x250/93b6da/ffffff?text=StudentHub+Profile" alt="StudentHub Profile">
+                <div class="slide-text">
+                    <h2>Welcome to StudentHub</h2>
+                    <p>Manage your student profile and academic information.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="https://via.placeholder.com/900x250/0056b3/ffffff?text=Academic+Details" alt="Academic Details">
+                <div class="slide-text">
+                    <h2>Track Your Academics</h2>
+                    <p>View your attendance, grades and subjects.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="https://via.placeholder.com/900x250/003366/ffffff?text=Student+Skills" alt="Student Skills">
+                <div class="slide-text">
+                    <h2>Show Your Skills</h2>
+                    <p>Keep your technical and communication skills updated.</p>
+                </div>
+            </div>
+
+            <button class="prev" onclick="changeSlide(-1)">❮</button>
+            <button class="next" onclick="changeSlide(1)">❯</button>
+
+        </section>
+
+        <section class="profile-container">
+
+            <div class="profile-card">
+
+                <img src="https://via.placeholder.com/150" alt="Student Profile Picture">
+
+                <h2 id="studentName">Khushboo Yadav</h2>
+
+                <p>B.Tech Computer Science Engineering</p>
+
+                <button onclick="openModal()">Edit Profile</button>
+
+            </div>
+
+            <div class="profile-details">
+
+                <h2>Student Information</h2>
+
+                <table>
+
+                    <tr>
+                        <th>Student ID</th>
+                        <td>25dcs144</td>
+                    </tr>
+
+                    <tr>
+                        <th>Email</th>
+                        <td>khushboo@example.com</td>
+                    </tr>
+
+                    <tr>
+                        <th>Mobile</th>
+                        <td>9876543210</td>
+                    </tr>
+
+                    <tr>
+                        <th>Course</th>
+                        <td>B.Tech CSE</td>
+                    </tr>
+
+                    <tr>
+                        <th>Semester</th>
+                        <td>3rd Semester</td>
+                    </tr>
+
+                    <tr>
+                        <th>Address</th>
+                        <td>Vadodara, Gujarat</td>
+                    </tr>
+
+                    <tr>
+                        <th>Permanent Address</th>
+                        <td>Surat, Gujarat</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="academic">
+
+            <h2>Academic Details</h2>
+
+            <table>
+
+                <tr>
+                    <th>Subject</th>
+                    <th>Attendance</th>
+                    <th>Grade</th>
+                </tr>
+
+                <tr>
+                    <td>Data Structures</td>
+                    <td>90%</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Java Programming</td>
+                    <td>88%</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Computer Networks</td>
+                    <td>92%</td>
+                    <td>A+</td>
+                </tr>
+
+                <tr>
+                    <td>DBMS</td>
+                    <td>85%</td>
+                    <td>B+</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <section class="skills">
+
+            <h2>Skills</h2>
+
+            <div class="skill-box">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Java</span>
+                <span>C++</span>
+                <span>Python</span>
+                <span>Communication</span>
+            </div>
+
+        </section>
+
+        <section class="faq">
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button onclick="toggleFAQ(this)">How can I edit my profile?</button>
+                <p>You can click the Edit Profile button and update your name and email.</p>
+            </div>
+
+            <div class="faq-item">
+                <button onclick="toggleFAQ(this)">Can I change my academic information?</button>
+                <p>Academic information can be updated through the student dashboard.</p>
+            </div>
+
+            <div class="faq-item">
+                <button onclick="toggleFAQ(this)">How can I change the theme?</button>
+                <p>Click the moon or sun button in the header to switch between light and dark mode.</p>
+            </div>
+
+            <div class="faq-item">
+                <button onclick="toggleFAQ(this)">Can I view my skills?</button>
+                <p>Yes, all your current skills are displayed in the Skills section.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 StudentHub Portal | Student Profile</p>
+    </footer>
+
+    <div id="profileModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeModal()">×</span>
+
+            <h2>Edit Profile</h2>
+
+            <label>Name</label>
+            <input type="text" id="nameInput" value="Khushboo Yadav">
+
+            <label>Email</label>
+            <input type="email" id="emailInput" value="khushboo@example.com">
+
+            <button onclick="saveProfile()">Save Changes</button>
+
+        </div>
+
+    </div>
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>
+```

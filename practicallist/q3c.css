@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+    <link rel="stylesheet" href="q3c.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Grade Calculator</h1>
+
+        <form id="gradeForm">
+            <label>Student Name</label>
+            <input type="text" id="name" placeholder="Enter name">
+
+            <label>Number of Subjects</label>
+            <input type="number" id="subjects" min="1" max="10" placeholder="Enter number">
+
+            <div id="marks"></div>
+
+            <button type="button" onclick="calculateGrade()">Calculate Grade</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="q3j.js"></script>
+</body>
+</html>

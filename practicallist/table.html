@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Table</title>
+
+    <style>
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 30px auto;
+        }
+
+        th, td {
+            border: 2px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: blue;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">Student Table</h1>
+
+    <table>
+
+        <!-- Table Heading -->
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Marks</th>
+        </tr>
+
+        <!-- Row 1 -->
+        <tr>
+            <td>1</td>
+            <td>Rahul</td>
+            <td>CSE</td>
+            <td>85</td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr>
+            <td>2</td>
+            <td>Priya</td>
+            <td>CSE</td>
+            <td>90</td>
+        </tr>
+
+        <!-- Row 3 -->
+        <tr>
+            <td>3</td>
+            <td>Amit</td>
+            <td>IT</td>
+            <td>88</td>
+        </tr>
+
+    </table>
+    
+
+</body>
+</html>

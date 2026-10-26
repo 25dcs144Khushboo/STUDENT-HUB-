@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Events</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>StudentHub</h1>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="banner">
+
+            <h2>Upcoming College Events</h2>
+
+            <p>
+                Participate, Learn and Grow with StudentHub
+            </p>
+
+        </section>
+
+        <section class="controls">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search events..."
+            >
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="Technical">
+                    Technical
+                </option>
+
+                <option value="Sports">
+                    Sports
+                </option>
+
+                <option value="Cultural">
+                    Cultural
+                </option>
+
+            </select>
+
+            <select id="sortSelect">
+
+                <option value="dateAsc">
+                    Date: Earliest First
+                </option>
+
+                <option value="dateDesc">
+                    Date: Latest First
+                </option>
+
+                <option value="nameAsc">
+                    Name: A-Z
+                </option>
+
+                <option value="nameDesc">
+                    Name: Z-A
+                </option>
+
+            </select>
+
+        </section>
+
+        <section
+            id="eventContainer"
+            class="event-container"
+        >
+
+            <p>Loading events...</p>
+
+        </section>
+
+        <div class="pagination">
+
+            <button id="prevBtn">
+                Previous
+            </button>
+
+            <span id="pageNumber">
+                Page 1
+            </span>
+
+            <button id="nextBtn">
+                Next
+            </button>
+
+        </div>
+
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 StudentHub Portal | All Rights Reserved
+        </p>
+
+    </footer>
+
+    <script src="events.js"></script>
+
+</body>
+
+</html>

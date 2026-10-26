@@ -1,0 +1,539 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+body {
+    background: #f4f7fc;
+    color: #222;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+header {
+    background: #93b6da;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 30px;
+
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+#themeButton {
+    background: white;
+    color: #003366;
+
+    border: none;
+
+    padding: 10px 15px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+#themeButton:hover {
+    background: #e6e6e6;
+}
+
+
+
+.welcome {
+    background: #e6f0ff;
+
+    text-align: center;
+
+    padding: 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.welcome h2 {
+    margin-bottom: 10px;
+}
+
+
+
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 20px;
+
+    padding: 30px;
+}
+
+
+.card {
+    background: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.card h3 {
+    color: #003366;
+
+    margin-bottom: 10px;
+}
+
+
+.card p {
+    font-size: 25px;
+
+    font-weight: bold;
+}
+
+
+
+
+.notice,
+.events,
+.quick {
+    background: white;
+
+    margin: 20px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.notice h2,
+.events h2,
+.quick h2 {
+    color: #003366;
+
+    margin-bottom: 15px;
+}
+
+
+.notice ul {
+    padding-left: 20px;
+}
+
+
+.notice li {
+    margin-bottom: 10px;
+}
+
+
+
+
+.events {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 500px;
+}
+
+
+table,
+th,
+td {
+    border: 1px solid #ccc;
+}
+
+
+th {
+    background: #003366;
+
+    color: white;
+}
+
+
+th,
+td {
+    padding: 12px;
+
+    text-align: center;
+}
+
+
+
+
+.buttons {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+}
+
+
+.buttons a {
+    background: #0056b3;
+
+    color: white;
+
+    padding: 12px 25px;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.buttons a:hover {
+    background: #003d80;
+}
+
+
+
+
+footer {
+    background: #003366;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+
+body.dark-mode {
+    background: #121212;
+
+    color: #eeeeee;
+}
+
+
+/* Header */
+
+body.dark-mode header {
+    background: #1f3b55;
+}
+
+
+/* Welcome section */
+
+body.dark-mode .welcome {
+    background: #1b2a38;
+
+    color: #eeeeee;
+}
+
+
+/* Cards */
+
+body.dark-mode .card {
+    background: #1e1e1e;
+
+    color: #eeeeee;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+
+body.dark-mode .card h3 {
+    color: #8ec5ff;
+}
+
+
+/* Notice, Events and Quick Actions */
+
+body.dark-mode .notice,
+body.dark-mode .events,
+body.dark-mode .quick {
+    background: #1e1e1e;
+
+    color: #eeeeee;
+
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+
+body.dark-mode .notice h2,
+body.dark-mode .events h2,
+body.dark-mode .quick h2 {
+    color: #8ec5ff;
+}
+
+
+/* Table */
+
+body.dark-mode table,
+body.dark-mode th,
+body.dark-mode td {
+    border-color: #555;
+}
+
+
+body.dark-mode th {
+    background: #142f49;
+}
+
+
+body.dark-mode td {
+    background: #1e1e1e;
+}
+
+
+/* Dark mode button */
+
+body.dark-mode #themeButton {
+    background: #333;
+
+    color: white;
+}
+
+
+body.dark-mode #themeButton:hover {
+    background: #444;
+}
+
+
+/* Footer */
+
+body.dark-mode footer {
+    background: #0b1d2d;
+}
+
+
+/* =========================
+   TRANSITION
+   ========================= */
+
+body,
+header,
+.welcome,
+.card,
+.notice,
+.events,
+.quick,
+footer,
+#themeButton {
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 15px 20px;
+    }
+
+
+    nav ul {
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    .welcome {
+        padding: 30px 20px;
+    }
+
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+
+        padding: 20px;
+
+        gap: 15px;
+    }
+
+
+    .notice,
+    .events,
+    .quick {
+        margin: 15px;
+
+        padding: 20px;
+    }
+
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 15px;
+    }
+
+
+    nav ul {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+    }
+
+
+    .welcome {
+        padding: 25px 15px;
+    }
+
+
+    .dashboard {
+        grid-template-columns: 1fr;
+
+        padding: 15px;
+
+        gap: 15px;
+    }
+
+
+    .card {
+        padding: 20px;
+    }
+
+
+    .card p {
+        font-size: 22px;
+    }
+
+
+    .notice,
+    .events,
+    .quick {
+        margin: 10px;
+
+        padding: 15px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 10px;
+    }
+
+
+    .buttons a {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    th,
+    td {
+        padding: 8px;
+
+        font-size: 14px;
+    }
+
+
+    footer {
+        padding: 15px;
+
+        font-size: 14px;
+    }
+
+
+    #themeButton {
+        padding: 9px 14px;
+    }
+}

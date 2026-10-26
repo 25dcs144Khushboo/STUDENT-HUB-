@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+        }
+
+        form {
+            width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid black;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            width: auto;
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 align="center">Registration Form</h1>
+
+    <form>
+
+        <!-- Text -->
+        <label>Name:</label>
+        <input type="text" name="name" placeholder="Enter your name">
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="Enter your email">
+
+        <!-- Password -->
+        <label>Password:</label>
+        <input type="password" name="password">
+
+        <!-- Number -->
+        <label>Age:</label>
+        <input type="number" name="age">
+
+        <!-- Date -->
+        <label>Date of Birth:</label>
+        <input type="date" name="dob">
+
+        <!-- Radio Button -->
+        <label>Gender:</label><br>
+
+        <input type="radio" name="gender" value="male">
+        Male
+
+        <input type="radio" name="gender" value="female">
+        Female
+
+        <br><br>
+
+        <!-- Checkbox -->
+        <label>Hobbies:</label><br>
+
+        <input type="checkbox" name="hobby" value="reading">
+        Reading
+
+        <input type="checkbox" name="hobby" value="sports">
+        Sports
+
+        <input type="checkbox" name="hobby" value="music">
+        Music
+
+        <br><br>
+
+        <!-- Select -->
+        <label>City:</label>
+
+        <select name="city">
+            <option>Select City</option>
+            <option>Ahmedabad</option>
+            <option>Vadodara</option>
+            <option>Surat</option>
+        </select>
+
+        <!-- Textarea -->
+        <label>Address:</label>
+
+        <textarea
+            name="address"
+            rows="4"
+            placeholder="Enter your address">
+        </textarea>
+
+        <!-- File -->
+        <label>Upload Photo:</label>
+        <input type="file" name="photo">
+
+        <!-- Range -->
+        <label>Skill Level:</label>
+        <input type="range" min="0" max="100">
+
+        <!-- Color -->
+        <label>Choose Color:</label>
+        <input type="color">
+
+        <!-- URL -->
+        <label>Website:</label>
+        <input type="url" placeholder="https://example.com">
+
+        <!-- Time -->
+        <label>Time:</label>
+        <input type="time">
+
+        <!-- Submit & Reset -->
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+
+    </form>
+
+</body>
+</html>

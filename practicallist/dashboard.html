@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>StudentHub Dashboard</h1>
+
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Dark Mode Button -->
+        <button id="themeButton" onclick="toggleTheme()">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+
+
+    <main>
+
+        <section class="welcome">
+
+            <h2>Welcome, Khushboo!</h2>
+
+            <p>
+                Have a great day. Here is your student dashboard.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard">
+
+            <article class="card">
+                <h3>Attendance</h3>
+                <p>85%</p>
+            </article>
+
+            <article class="card">
+                <h3>Courses</h3>
+                <p>5 Subjects</p>
+            </article>
+
+            <article class="card">
+                <h3>Assignments</h3>
+                <p>3 Pending</p>
+            </article>
+
+            <article class="card">
+                <h3>CGPA</h3>
+                <p>8.6</p>
+            </article>
+
+        </section>
+
+
+        <section class="notice">
+
+            <h2>Latest Notices</h2>
+
+            <ul>
+                <li>📢 Mid Semester Exam starts from 15 September.</li>
+                <li>📢 Hackathon Registration closes on 20 August.</li>
+                <li>📢 Library books must be returned before Friday.</li>
+            </ul>
+
+        </section>
+
+
+        <section class="events">
+
+            <h2>Upcoming Events</h2>
+
+            <table>
+
+                <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                </tr>
+
+                <tr>
+                    <td>12 Aug</td>
+                    <td>Coding Competition</td>
+                </tr>
+
+                <tr>
+                    <td>18 Aug</td>
+                    <td>AI Workshop</td>
+                </tr>
+
+                <tr>
+                    <td>28 Aug</td>
+                    <td>Sports Meet</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+
+        <section class="quick">
+
+            <h2>Quick Actions</h2>
+
+            <div class="buttons">
+
+                <a href="profile.html">My Profile</a>
+
+                <a href="events.html">View Events</a>
+
+                <a href="contact.html">Contact</a>
+
+                <a href="feedback.html">Feedback</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>© 2026 StudentHub Portal | Dashboard</p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
